@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="ホーム">
+  <section class="intro">
+    <h1>Tape</h1>
+    <p>物語を楽しみながら、英語を学ぶ。<br />Tapeは、見る・聞く・答えるをつなぐ英語学習アプリです。</p>
+  </section>
+  <section class="home-section" aria-labelledby="features-title">
+    <h2 id="features-title">物語の中で、英語にふれる。</h2>
+    <p>絵と音声で物語を楽しみながら、単語やフレーズに出会う。途中に出てくる問題に答えて、出会った英語を練習できます。</p>
+    <div class="features">
+      <article><h3>見る・聞く</h3><p>場面や会話を通して、英語の意味や使われ方にふれられます。</p></article>
+      <article><h3>答える・学ぶ</h3><p>物語の途中で問題に挑戦。内容を振り返りながら、英語を確かめられます。</p></article>
+    </div>
+  </section>
+  <section class="home-section getting-started" aria-labelledby="start-title">
+    <h2 id="start-title">使い方はシンプル。</h2>
+    <ol>
+      <li><strong>気になる作品を選ぶ</strong><p>まずは、見てみたい物語を探してみましょう。</p></li>
+      <li><strong>エピソードを再生する</strong><p>絵と英語の音声で、物語を楽しみます。</p></li>
+      <li><strong>問題に答える</strong><p>物語の途中に登場する問題で、単語やフレーズを練習します。</p></li>
+    </ol>
+  </section>
+</Layout>
+<style>
+  .intro{max-width:800px;margin:0 auto;padding:64px 0 48px}.intro h1{font-size:40px;margin:20px 0 16px}.intro p{margin:0;font-size:18px}
+  .home-section{padding:36px 0;border-top:1px solid #e2e6e0}
+  .features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:28px}
+  .features article{padding-left:20px;border-left:4px solid #ffd600}
+  .features h3{font-size:21px;line-height:1.6;margin:0 0 10px}.features p{margin:0}
+  .getting-started{padding-bottom:64px}.getting-started ol{margin:24px 0 0;padding-left:28px}
+  .getting-started li{padding-left:8px;margin:0 0 24px}.getting-started li:last-child{margin-bottom:0}
+  .getting-started li::marker{font-weight:700}.getting-started p{margin:4px 0 0}
+  @media(max-width:600px){.intro{padding:40px 0 36px}.home-section{padding-top:28px}.features{grid-template-columns:1fr;gap:24px}.getting-started{padding-bottom:40px}}
+</style>

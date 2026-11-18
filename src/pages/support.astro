@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, path } from '../site.js';
+const contact = site.supportForm || (site.supportEmail ? `mailto:${site.supportEmail}` : '');
+---
+<Layout title="サポート">
+  <div class="page-head"><h1>サポート</h1><p>Tapeの使い方や不具合についてご案内します。</p></div>
+  <div class="article">
+    <section class="panel">
+      <h2>お問い合わせ</h2>
+      {site.supportEmail && <p>メールの宛先は {site.supportEmail} です。</p>}
+      {contact ? <a class="button" href={contact}>{site.supportForm ? 'お問い合わせフォームを開く' : '問い合わせを作成'}</a> : <p class="required">お問い合わせ窓口は準備中です。</p>}
+      <p>不具合を報告する際は、次の情報をお知らせください。</p>
+      <ul><li>端末名・OSのバージョン</li><li>Tapeのバージョン</li><li>起きている状況・操作手順</li></ul>
+      <p>パスワードなどの認証情報は送らないでください。</p>
+    </section>
+    <section><h2>よくある質問</h2>
+      <details><summary>何から始めればいいですか？</summary><p>気になる作品を選び、エピソードを再生してください。物語の途中に出てくる問題で英語を練習できます。</p></details>
+      <details><summary>音が出ません。</summary><p>端末とアプリ内の音量、イヤホンやBluetoothの接続先を確認してください。</p></details>
+      <details><summary>読み込みが進みません。</summary><p>通信状況を確認し、少し待ってから再試行してください。改善しない場合はアプリを開き直してください。</p></details>
+    </section>
+    <section><h2>アカウント・データの削除</h2>
+      {site.accountDeletion ? <p>{site.accountDeletion}</p> : <p class="required">削除手順については、上記の窓口へお問い合わせください。</p>}
+      <p>利用者情報の取り扱いは、<a href={path('privacy/')}>プライバシーポリシー</a>をご覧ください。</p>
+    </section>
+  </div>
+</Layout>
